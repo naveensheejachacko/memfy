@@ -241,6 +241,7 @@ button {
   align-items: center;
   gap: 12px;
   box-shadow: 0 12px 12px rgba(0, 0, 0, 0.05);
+  overflow: visible;
 }
 
 .friend-card img {
@@ -444,12 +445,272 @@ button {
 .art {
   display: grid;
   place-items: center;
+  position: relative;
+}
+
+.art .refresh,
+.art .car,
+.art .sleep,
+.art .curious {
+  position: relative;
+  z-index: 1;
 }
 
 .art .refresh { width: 320px; height: 320px; object-fit: contain; }
 .art .car { width: 300px; height: 300px; object-fit: contain; }
 .art .sleep { width: 360px; height: 240px; object-fit: contain; mix-blend-mode: lighten; }
 .art .curious { width: 280px; height: 280px; object-fit: contain; }
+
+.bob-cat,
+.float-phone,
+.cta-cat,
+.nod-cat,
+.art .refresh,
+.art .car,
+.art .sleep,
+.art .curious {
+  will-change: transform;
+}
+
+.bob-cat {
+  animation: bob 3.2s ease-in-out infinite;
+}
+
+.float-phone {
+  animation: float-y 4.4s ease-in-out infinite;
+}
+
+.cta-cat {
+  animation: bob 2.8s ease-in-out infinite;
+}
+
+.nod-cat {
+  animation: nod 2.4s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+.art-breathe {
+  min-height: 340px;
+}
+
+.ripples {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 280px;
+  height: 280px;
+  margin: -140px 0 0 -140px;
+  pointer-events: none;
+}
+
+.ripples span {
+  position: absolute;
+  inset: 0;
+  border: 2px solid rgba(254, 79, 24, 0.35);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.art-breathe.in-view .refresh {
+  animation: breathe 3.6s ease-in-out infinite;
+}
+
+.art-breathe.in-view .ripples span:nth-child(1) {
+  animation: ripple 3.6s ease-out infinite;
+}
+
+.art-breathe.in-view .ripples span:nth-child(2) {
+  animation: ripple 3.6s ease-out 1.2s infinite;
+}
+
+.art-breathe.in-view .ripples span:nth-child(3) {
+  animation: ripple 3.6s ease-out 2.4s infinite;
+}
+
+.art-drive {
+  min-height: 320px;
+  overflow: hidden;
+}
+
+.road {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 18%;
+  height: 6px;
+  border-radius: 999px;
+  background: repeating-linear-gradient(
+    90deg,
+    #151618 0 18px,
+    transparent 18px 32px
+  );
+  background-size: 50px 6px;
+  opacity: 0.18;
+}
+
+.art-drive.in-view .road {
+  animation: road-slide 1.1s linear infinite;
+}
+
+.art-drive.in-view .car {
+  animation: drive 2.6s ease-in-out infinite;
+}
+
+.art-snooze {
+  min-height: 280px;
+}
+
+.z {
+  position: absolute;
+  top: 18%;
+  right: 18%;
+  color: #94acc8;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.z1 { font-size: 18px; right: 22%; }
+.z2 { font-size: 22px; right: 16%; }
+.z3 { font-size: 28px; right: 10%; }
+
+.art-snooze.in-view .sleep {
+  animation: snooze 3.8s ease-in-out infinite;
+}
+
+.art-snooze.in-view .z1 { animation: zzz 3.2s ease-out infinite; }
+.art-snooze.in-view .z2 { animation: zzz 3.2s ease-out 0.7s infinite; }
+.art-snooze.in-view .z3 { animation: zzz 3.2s ease-out 1.4s infinite; }
+
+.art-curious {
+  min-height: 300px;
+}
+
+.q {
+  position: absolute;
+  color: var(--orange);
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.q1 {
+  top: 12%;
+  right: 18%;
+  font-size: 36px;
+}
+
+.q2 {
+  top: 22%;
+  right: 8%;
+  font-size: 22px;
+  opacity: 0.7;
+}
+
+.art-curious.in-view .curious {
+  animation: peek 2.8s ease-in-out infinite;
+}
+
+.art-curious.in-view .q1 {
+  animation: qmark 2.2s ease-in-out infinite;
+}
+
+.art-curious.in-view .q2 {
+  animation: qmark 2.2s ease-in-out 0.5s infinite;
+}
+
+@keyframes bob {
+  0%,
+  100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-10px) rotate(3deg); }
+}
+
+@keyframes float-y {
+  0%,
+  100% { transform: translateY(0); }
+  50% { transform: translateY(-16px); }
+}
+
+@keyframes breathe {
+  0%,
+  100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.72);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+}
+
+@keyframes drive {
+  0%,
+  100% { transform: translateX(-14px) translateY(4px); }
+  50% { transform: translateX(18px) translateY(-8px); }
+}
+
+@keyframes road-slide {
+  from { background-position: 0 0; }
+  to { background-position: 50px 0; }
+}
+
+@keyframes snooze {
+  0%,
+  100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(6px) rotate(1deg); }
+}
+
+@keyframes zzz {
+  0% {
+    opacity: 0;
+    transform: translate(0, 12px) scale(0.6);
+  }
+  25% { opacity: 1; }
+  100% {
+    opacity: 0;
+    transform: translate(20px, -52px) scale(1.1);
+  }
+}
+
+@keyframes peek {
+  0%,
+  100% { transform: rotate(-5deg) translateY(0); }
+  50% { transform: rotate(6deg) translateY(-8px); }
+}
+
+@keyframes qmark {
+  0%,
+  100% { transform: translateY(0) rotate(-10deg); opacity: 0.65; }
+  50% { transform: translateY(-14px) rotate(8deg); opacity: 1; }
+}
+
+@keyframes nod {
+  0%,
+  100% { transform: rotate(0); }
+  30% { transform: rotate(-8deg); }
+  55% { transform: rotate(6deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bob-cat,
+  .float-phone,
+  .cta-cat,
+  .nod-cat,
+  .art-breathe.in-view .refresh,
+  .art-breathe.in-view .ripples span,
+  .art-drive.in-view .car,
+  .art-drive.in-view .road,
+  .art-snooze.in-view .sleep,
+  .art-snooze.in-view .z,
+  .art-curious.in-view .curious,
+  .art-curious.in-view .q {
+    animation: none !important;
+  }
+}
 
 .mini-cards {
   display: flex;

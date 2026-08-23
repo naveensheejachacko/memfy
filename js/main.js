@@ -18,3 +18,18 @@ document.querySelectorAll(".faq-item").forEach((item) => {
     }
   });
 });
+
+const motionOk = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (motionOk && "IntersectionObserver" in window) {
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("in-view", entry.isIntersecting);
+      });
+    },
+    { threshold: 0.35 }
+  );
+  document.querySelectorAll("[data-animate]").forEach((el) => observer.observe(el));
+} else {
+  document.querySelectorAll("[data-animate]").forEach((el) => el.classList.add("in-view"));
+}

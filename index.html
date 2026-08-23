@@ -72,12 +72,12 @@
           </div>
         </div>
         <div class="hero-visual">
-          <div class="friend-card">
-            <img src="assets/mascot-friend.png" width="120" height="120" alt="Memfy cat mascot" />
+          <div class="friend-card in-view">
+            <img class="bob-cat" src="assets/mascot-friend.png" width="120" height="120" alt="Memfy cat mascot" />
             <p>Your Best Friend</p>
           </div>
           <img
-            class="phone-shot"
+            class="phone-shot float-phone"
             src="assets/hero-visual.png"
             width="291"
             height="588"
@@ -144,7 +144,12 @@
       </section>
 
       <section class="split blue">
-        <div class="art">
+        <div class="art art-breathe" data-animate>
+          <div class="ripples" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <img class="refresh" src="assets/cat-refresh.png" width="320" height="320" alt="Memfy cat sitting calmly on an orange cushion" />
         </div>
         <div class="split-copy">
@@ -206,7 +211,8 @@
       </section>
 
       <section class="split paper">
-        <div class="art">
+        <div class="art art-drive" data-animate>
+          <div class="road" aria-hidden="true"></div>
           <img class="car" src="assets/cat-car.png" width="300" height="300" alt="Memfy cat driving a red convertible" />
         </div>
         <div class="split-copy">
@@ -216,7 +222,7 @@
             Memfy doesn’t just show statistics. Your black cat mascot checks in on your daily journey, reacts to your moods, suggests quick physical and breathing exercises, and actively chats with you to ease mental clutter.
           </p>
           <div class="chat-pill">
-            <img src="assets/cat-chat.png" width="48" height="48" alt="" />
+            <img class="nod-cat" src="assets/cat-chat.png" width="48" height="48" alt="" />
             <div>
               <p>“Did you drink water yet today? Let's take 10 seconds to stretch!”</p>
               <small>Active Companion Chat</small>
@@ -243,13 +249,18 @@
             </div>
           </div>
         </div>
-        <div class="art">
+        <div class="art art-snooze" data-animate>
+          <span class="z z1" aria-hidden="true">z</span>
+          <span class="z z2" aria-hidden="true">z</span>
+          <span class="z z3" aria-hidden="true">Z</span>
           <img class="sleep" src="assets/cat-sleep.png" width="360" height="240" alt="Memfy cat sleeping on an orange pillow" />
         </div>
       </section>
 
       <section class="split widget" id="widget">
-        <div class="art">
+        <div class="art art-curious" data-animate>
+          <span class="q q1" aria-hidden="true">?</span>
+          <span class="q q2" aria-hidden="true">?</span>
           <img class="curious" src="assets/cat-curious.png" width="280" height="280" alt="Curious Memfy cat with question marks" />
         </div>
         <div class="split-copy">
@@ -384,7 +395,7 @@
       </section>
 
       <section class="cta" id="download">
-        <img src="assets/logo-cat.png" width="120" height="120" alt="Memfy cat" />
+        <img class="cta-cat" src="assets/logo-cat.png" width="120" height="120" alt="Memfy cat" />
         <div>
           <h2>Your memory deserves a companion</h2>
           <p>Start your mental wellness and mindfulness journey today for free. Let's remember things together!</p>
