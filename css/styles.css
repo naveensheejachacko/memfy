@@ -130,17 +130,17 @@ button {
 .store-btn {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   background: var(--ink);
   color: var(--white);
-  border-radius: 12px;
-  padding: 10px 16px;
-  min-height: 50px;
+  border-radius: 10px;
+  padding: 7px 12px;
+  min-height: 42px;
 }
 
 .store-btn img {
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   object-fit: contain;
   flex-shrink: 0;
 }
@@ -159,7 +159,7 @@ button {
 .store-btn strong {
   display: block;
   font-family: Inter, sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -1027,11 +1027,32 @@ button {
   padding: 100px 80px;
 }
 
-.cta img {
+.cta .cta-cat {
   width: 120px;
   height: 120px;
   object-fit: contain;
   margin: 0 auto 40px;
+}
+
+.cta .store-btn {
+  gap: 8px;
+  padding: 6px 12px;
+  min-height: 40px;
+  border-radius: 10px;
+}
+
+.cta .store-btn img {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.cta .store-btn small {
+  font-size: 8px;
+}
+
+.cta .store-btn strong {
+  font-size: 12px;
 }
 
 .cta h2 {
